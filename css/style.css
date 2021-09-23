@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+}
+
+.display-none {
+  display: none;
+}
+
+/* images reset */
+.profile-image {
+  width: 200px;
+  border: 10px solid rgb(240, 232, 232);
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(5deg);
+}
+
+.links img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.email-icon {
+  width: 40px;
+}
+
+.info {
+  background-color: #8860d0;
+  width: 30vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.wrapper {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.info .image-area {
+  width: 100%;
+  text-align: center;
+}
+
+.text-area {
+  /* text-align: center; */
+  width: 70%;
+  margin: 0 auto;
+}
+
+.text-area p {
+  font-size: 12.5px;
+  letter-spacing: 1.5px;
+  line-height: 20px;
+  margin: 5px 0;
+}
+
+.text-area h2 {
+  font-size: 1.5rem;
+}
+
+.text-area h2 span {
+  font-size: 1rem;
+  font-weight: 300;
+  display: block;
+  /* transform: translateX(-20px); */
+}
+
+.text-area h3 {
+  font-size: 1rem;
+}
+
+.text-area ul {
+  list-style: none;
+}
+
+.text-area .skills li {
+  font-size: 12.5px;
+  letter-spacing: 1.5px;
+  margin: 2px 0;
+}
+
+.text-area .skills ~ h3 {
+  padding-top: 15px;
+}
+
+.text-area .links {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+.text-area .links li a img {
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+.text-area .links li a img:hover {
+  transform: scale(1.2);
+}
+
+.email-area {
+  width: 90%;
+  padding-top: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email-area h3 {
+  padding-bottom: 10px;
+}
+
+.email-area input {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  /* background: rgb(240, 232, 232, 0.3); */
+  background: rgba(90, 185, 234, 0.4);
+  color: white;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.icon-copy {
+  position: absolute;
+  width: 20px;
+  top: 58.5px;
+  right: 8px;
+  opacity: 0.5;
+  filter: invert(2);
+  cursor: pointer;
+}
+
+.alert {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 80px;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 10px;
+  background-color: rgb(175, 175, 175);
+  transform: scale(0);
+  transform-origin: bottom;
+  transition: transform 200ms ease-in;
+}
+
+.active {
+  transform: scale(1);
+}
+
+.icon-copy:hover {
+  opacity: 1;
+}
+
+.projects {
+  width: 70vw;
+  background-image: radial-gradient(#84ceeb, #3165e9);
+}
+
+.projects header {
+  position: fixed;
+  width: 70vw;
+  height: 8vh;
+  background-color: rgba(193, 200, 228, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  transition: background-color 300ms ease-in, box-shadow 300ms ease-in;
+}
+
+.header-scrolled {
+  background-color: rgba(193, 200, 228, 1) !important;
+  box-shadow: 0px 9px 6px -5px rgb(0 0 0 / 10%);
+}
+
+.projects header h1 {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 10px;
+}
+
+.project {
+  background-color: turquoise;
+  border-radius: 15px;
+  overflow: hidden;
+  color: white;
+  background-image: linear-gradient(to bottom, #8860d0 60%, #84ceeb);
+  box-shadow: 0px 0px 18px 3px rgb(0 0 0 / 15%);
+  --stagger-delay: 150ms;
+}
+
+.project-grid {
+  padding: 5rem;
+  padding-top: 8rem;
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+
+.project img {
+  width: 100%;
+  max-height: 130px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project__links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h4 {
+  padding: 2px 0;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border-bottom: 1px solid white;
+}
+
+hr {
+  width: 100%;
+}
+
+.project__links a {
+  /* color: rgb(212, 212, 212); */
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition: color 100ms ease-in, text-decoration 100ms ease-in;
+}
+
+.project__links .url {
+  color: rgb(126, 85, 202);
+  padding-top: 4px;
+}
+
+.project__links .code {
+  color: #5680e9;
+}
+
+.project__links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes translation {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scaleX(0.7);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+  .info,
+  .wrapper {
+    width: 100vw;
+  }
+
+  .info {
+    min-height: 85vh;
+  }
+
+  .wrapper {
+    position: unset;
+    transform: unset;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .text-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-area .box-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    /* text-align: start; */
+  }
+
+  .icon-copy {
+    display: none;
+  }
+
+  .email-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-text-copy {
+    text-align: center;
+  }
+
+  .box-1 .info_box,
+  .box-1 .skill_box {
+    width: 50%;
+  }
+
+  .profile-image {
+    width: 150px;
+    border: 5px solid white;
+  }
+
+  .projects header {
+    position: unset;
+  }
+
+  .box-1 .info_box {
+    text-align: end;
+  }
+  .box-1 .skill_box {
+    text-align: start;
+  }
+
+  .box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .links li {
+    padding: 0 10px;
+  }
+
+  .projects,
+  .projects header {
+    width: 100vw;
+  }
+
+  .project-grid {
+    text-align: center;
+  }
+
+  .scroll-up {
+    display: block;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 25px;
+  }
+
+  .image-area {
+    animation: fadeUp 700ms ease-out;
+  }
+
+  .text-area {
+    animation: fadeUp 700ms ease-out 200ms;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .image-area {
+    animation: fadeIn 700ms ease-out 200ms;
+    animation-fill-mode: backwards;
+  }
+
+  .text-area {
+    animation: fadeIn 700ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .info_box p {
+    animation: fadeIn 700ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .skills {
+    animation: fadeIn 700ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .links li:nth-child(1) img {
+    animation: translation 700ms ease-out 200ms;
+    animation-fill-mode: backwards;
+  }
+  .links li:nth-child(2) img {
+    animation: translation 700ms ease-out 300ms;
+    animation-fill-mode: backwards;
+  }
+  .links li:nth-child(3) img {
+    animation: translation 700ms ease-out 400ms;
+    animation-fill-mode: backwards;
+  }
+  .links li:nth-child(4) img {
+    animation: translation 700ms ease-out 500ms;
+    animation-fill-mode: backwards;
+  }
+
+  .email-area {
+    animation: translation 700ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  h1 {
+    animation: fadeIn 700ms ease-out 200ms;
+    animation-fill-mode: backwards;
+  }
+
+  .project {
+    /* background-color: rgb(36, 243, 147); */
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .project:nth-child(1) {
+    animation-delay: calc(1 * var(--stagger-delay));
+  }
+  .project:nth-child(2) {
+    animation-delay: calc(2 * var(--stagger-delay));
+  }
+  .project:nth-child(3) {
+    animation-delay: calc(3 * var(--stagger-delay));
+  }
+  .project:nth-child(4) {
+    animation-delay: calc(4 * var(--stagger-delay));
+  }
+  .project:nth-child(5) {
+    animation-delay: calc(5 * var(--stagger-delay));
+  }
+  .project:nth-child(6) {
+    animation-delay: calc(6 * var(--stagger-delay));
+  }
+  .project:nth-child(7) {
+    animation-delay: calc(7 * var(--stagger-delay));
+  }
+  .project:nth-child(8) {
+    animation-delay: calc(8 * var(--stagger-delay));
+  }
+  .project:nth-child(9) {
+    animation-delay: calc(9 * var(--stagger-delay));
+  }
+  .project:nth-child(10) {
+    animation-delay: calc(10 * var(--stagger-delay));
+  }
+  .project:nth-child(11) {
+    animation-delay: calc(11 * var(--stagger-delay));
+  }
+  .project:nth-child(12) {
+    animation-delay: calc(12 * var(--stagger-delay));
+  }
+}
